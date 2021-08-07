@@ -6,17 +6,21 @@ RFB(Remote Framebuffer Protocol) 远程帧缓冲协议，是一种允许用户�
 
 ![RFB示意图](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-07-085929.png)
 
+### Framebuffer
+
+> TODO
+
 ### VNC 软件
 
 VNC (Vitual Network Computing) 是通过 RFB 协议实现屏幕画面分享和远程操作的应用软件，是 RFB 协议的具体应用，是远程桌面软件的一种。VNC 和 RFB 的关系类似 Chrome 和 HTTP，RFB 和 HTTP 是协议，VNC 和 Chrome 是具体实现。
 
-### 面临的问题
+### 协议特点
 
-根据 RFB 协议的定义，我们不难看出，RFB 协议主要解决三类问题
+RFB 协议有以下几个特点，这些设计理念贯穿协议
 
-1. 传输鼠标、键盘输入的控制信号
-2. 传输用户图形界面
-3. 弱网络环境条件下的稳定传输
+- 瘦客户端。客户端职责约简单清晰越好，无状态设计
+- 基于弱网络环境传输
+- 跨操作系统、跨语言兼容性
 
 ## RFB 协议版本
 
