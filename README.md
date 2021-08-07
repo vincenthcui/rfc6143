@@ -49,4 +49,4 @@ Version 3.8 (Final) | 2010-11-26 | -
 
 - 2010年11月26日，发布稳定协议版本 v3.8。
 
-> RFB 是 IEEE 公开的开源通信协议，但 RFB® 和 VNC® 是 RealVNC 公司的注册商标。
+> RFB 是 IETF 公开的开源通信协议，但 RFB® 和 VNC® 是 RealVNC 公司的注册商标。
