@@ -16,7 +16,7 @@ install:
 
 before_script:
   - REMOTE_URL=$(git remote -v | awk '/origin/{print $2}' | head -n 1)
-  - git clone --single-branch --branch gh-pages ${REMOTE_URL}
+  - git clone --single-branch --branch gh-pages ${REMOTE_URL} _book
   - cd _book
   - git rm -rf .
   - git clean -fxd
