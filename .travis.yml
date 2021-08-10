@@ -20,6 +20,7 @@ before_script:
   - cd _book
   - git rm -rf .
   - git clean -fxd
+  - cd ..
 
 script:
   - gitbook build
@@ -29,6 +30,7 @@ after_script:
   - git add .
   - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
   - git push
+  - cd ..
 
 branches:
   only:
