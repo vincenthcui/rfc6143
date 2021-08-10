@@ -6,7 +6,12 @@ RFB 协议分为握手和交换两个阶段，握手阶段包含协议版本握�
 - 安全握手
 - 帧交换
 
-> TODO: 插图
+```mermaid
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
+```
 
 ## 协议版本握手
 
