@@ -6,7 +6,7 @@ cache: npm
 notifications:
   email:
     recipients:
-      - vincenthcui@qq.com # 设置通知邮件
+      - vincenthcui@qq.com
     on_success: change
     on_failure: always
 
@@ -14,11 +14,21 @@ install:
   - npm install -g gitbook-cli
   - gitbook install
 
+before_script:
+  - REMOTE_URL=$(git remote -v | awk '/origin/{print $2}' | head -n 1)
+  - git clone --single-branch --branch gh-pages ${REMOTE_URL}
+  - cd _book
+  - git rm -rf .
+  - git clean -fxd
+
 script:
   - gitbook build
 
 after_script:
-  - git subtree push --quiet --prefix=_book origin gh-pages
+  - cd _book
+  - git add .
+  - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
+  - git push
 
 branches:
   only:
