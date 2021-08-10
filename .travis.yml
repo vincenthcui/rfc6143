@@ -29,7 +29,7 @@ after_script:
   - cd _book
   - git add .
   - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
-  - git push
+  - git push origin HEAD:gh-pages
   - cd ..
 
 branches:
