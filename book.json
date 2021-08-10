@@ -1,0 +1,8 @@
+{
+    "title" : "RFB 远程帧缓冲协议",
+    "plugins": [
+        "summary",
+        "toggle-chapters",
+        "theme-comscore"
+    ]
+}
