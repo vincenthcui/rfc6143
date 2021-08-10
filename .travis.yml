@@ -12,12 +12,12 @@ notifications:
 
 install:
   - npm install -g gitbook-cli
-  - npm install gitbook-summary
+  - npm install -g gitbook-summary
   - gitbook install
 
 script:
-  - gitbook build
   - book sm
+  - gitbook build
 
 branches:
   only:
