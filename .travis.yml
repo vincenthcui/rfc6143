@@ -12,25 +12,12 @@ notifications:
 
 install:
   - npm install -g gitbook-cli
+  - npm install gitbook-summary
   - gitbook install
-
-before_script:
-  - REMOTE_URL=$(git remote -v | awk '/origin/{print $2}' | head -n 1)
-  - git clone --single-branch --branch gh-pages ${REMOTE_URL} _book
-  - cd _book
-  - git rm -rf .
-  - git clean -fxd
-  - cd ..
 
 script:
   - gitbook build
-
-# after_script:
-#   - cd _book
-#   - git add .
-#   - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
-#   - git push origin HEAD:gh-pages
-#   - cd ..
+  - book sm
 
 branches:
   only:
