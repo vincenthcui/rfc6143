@@ -1,0 +1,46 @@
+language: node_js
+node_js:
+  - "10"
+cache: npm
+
+notifications:
+  email:
+    recipients:
+      - vincenthcui@qq.com
+    on_success: change
+    on_failure: always
+
+install:
+  - npm install -g gitbook-cli
+  - gitbook install
+
+before_script:
+  - REMOTE_URL=$(git remote -v | awk '/origin/{print $2}' | head -n 1)
+  - git clone --single-branch --branch gh-pages ${REMOTE_URL} _book
+  - cd _book
+  - git rm -rf .
+  - git clean -fxd
+  - cd ..
+
+script:
+  - gitbook build
+
+# after_script:
+#   - cd _book
+#   - git add .
+#   - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
+#   - git push origin HEAD:gh-pages
+#   - cd ..
+
+branches:
+  only:
+    - main
+
+deploy:
+  provider: pages
+  local_dir: _book
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: main
