@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "10"
+cache: npm
+
+notifications:
+  email:
+    recipients:
+      - vincenthcui@qq.com # 设置通知邮件
+    on_success: change
+    on_failure: always
+
+install:
+  - npm install -g gitbook-cli
+  - gitbook install
+
+script:
+  - gitbook build
+
+after_script:
+  - git subtree push --quiet --prefix=_book origin gh-pages
+
+branches:
+  only:
+    - main
