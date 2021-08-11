@@ -1,0 +1,380 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>鼠标事件 · RFB 远程帧缓冲协议</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="keyboard.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../initial/">
+            
+                <a href="../initial/">
+            
+                    
+                    协议初始化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../initial/protocol-version.html">
+            
+                <a href="../initial/protocol-version.html">
+            
+                    
+                    协议版本握手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../initial/security-type.html">
+            
+                <a href="../initial/security-type.html">
+            
+                    
+                    安全握手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    输入协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="mouse.html">
+            
+                <a href="mouse.html">
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="keyboard.html">
+            
+                <a href="keyboard.html">
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="clipboard.html">
+            
+                <a href="clipboard.html">
+            
+                    
+                    剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >鼠标事件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9F20;&#x6807;&#x4E8B;&#x4EF6;">&#x9F20;&#x6807;&#x4E8B;&#x4EF6;</h1>
+<p>&#x9F20;&#x6807;&#x6307;&#x9488;&#x5373;&#x9F20;&#x6807;&#x64CD;&#x4F5C;&#x4E8B;&#x4EF6;&#xFF0C;&#x5206;&#x79FB;&#x52A8;&#x4E8B;&#x4EF6;&#x548C;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x4E24;&#x79CD;&#x3002;&#x5728; RFB &#x534F;&#x8BAE;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528; PointerEvent &#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h2 id="&#x534F;&#x8BAE;&#x62A5;&#x6587;">&#x534F;&#x8BAE;&#x62A5;&#x6587;</h2>
+<p>&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x7684;&#x62A5;&#x6587;&#x5982;&#x4E0B;</p>
+<pre><code>  +--------------+--------------+--------------+
+  | No. of bytes | Type [Value] | Description  |
+  +--------------+--------------+--------------+
+  | 1            | U8 [5]       | message-type |
+  | 1            | U8           | button-mask  |
+  | 2            | U16          | x-position   |
+  | 2            | U16          | y-position   |
+  +--------------+--------------+--------------+
+</code></pre><ul>
+<li>message-type: &#x65E0;&#x7B26;&#x53F7;&#x6574;&#x5F62;&#xFF0C;&#x56FA;&#x5B9A; <code>0x5</code></li>
+<li>button-mask: 8 &#x4F4D;&#x63A9;&#x7801;&#xFF0C;&#x8868;&#x793A;&#x952E;&#x4F4D;&#x72B6;&#x6001;&#xFF0C;<code>1</code>&#x4E3A;&#x6309;&#x4E0B;&#xFF0C;<code>0</code>&#x4E3A;&#x5F39;&#x8D77;</li>
+<li>x-position: &#x5F53;&#x524D; X &#x5750;&#x6807;</li>
+<li>y-position: &#x5F53;&#x524D; Y &#x5750;&#x6807;</li>
+</ul>
+<p>button-mask &#x7684; Bit0/1/2 &#x4F4D;&#x7F6E;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x9F20;&#x6807;&#x7684;&#x5DE6;&#x952E;&#x3001;&#x4E2D;&#x5EFA;&#x3001;&#x53F3;&#x952E;&#x3002;&#x4F7F;&#x7528;&#x6EDA;&#x8F6E;&#x7684;&#x9F20;&#x6807;&#xFF0C;&#x6BCF;&#x5411;&#x4E0A;&#x6ED1;&#x52A8;&#x4E00;&#x6B21;&#xFF0C;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A; Bit3 &#x7684;&#x6309;&#x4E0B;&#x548C;&#x5F39;&#x8D77;&#x4E8B;&#x4EF6;&#xFF1B;&#x6BCF;&#x5411;&#x4E0B;&#x6ED1;&#x52A8;&#x4E00;&#x6B21;&#xFF0C;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A; Bit4 &#x7684;&#x6309;&#x4E0B;&#x548C;&#x5F39;&#x8D77;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h2 id="usbps2-&#x9F20;&#x6807;&#x534F;&#x8BAE;">USB/PS/2 &#x9F20;&#x6807;&#x534F;&#x8BAE;</h2>
+<p>&#x5728; PS/2 &#x6216; USB &#x9F20;&#x6807;&#x534F;&#x8BAE;&#x4E2D;&#xFF0C;&#x6709;&#x7C7B;&#x4F3C; RFB &#x534F;&#x8BAE;&#x7684;&#x8868;&#x8FBE;&#x65B9;&#x5F0F;&#x3002;</p>
+<pre><code> &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+ &#x2502;      &#x2502; Bit7 &#x2502; Bit6 &#x2502; Bit5 &#x2502; Bit4 &#x2502; Bit3 &#x2502; Bit2 &#x2502; Bit1 &#x2502; Bit0 &#x2502;
+ &#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2524;
+ &#x2502;Byte 1&#x2502;Y Over&#x2502;X Over&#x2502;X Sign&#x2502;Y Sign&#x2502; 0x1  &#x2502; Mid  &#x2502;Right &#x2502; Left &#x2502;
+ &#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2524;
+ &#x2502;Byte 2&#x2502;                      X Movement                       &#x2502;
+ &#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2524;
+ &#x2502;Byte 3&#x2502;                      Y Movement                       &#x2502;
+ &#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2524;
+ &#x2502;Byte 4&#x2502;                      Z Movement                       &#x2502;
+ &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;
+</code></pre><p>&#x9F20;&#x6807;&#x534F;&#x8BAE;&#x548C; RFB &#x534F;&#x8BAE;&#x6709;&#x4E24;&#x70B9;&#x4E0D;&#x540C;&#xFF1A;</p>
+<ul>
+<li>&#x9F20;&#x6807;&#x534F;&#x8BAE;&#x7684; Bit0/1/2 &#x548C; RFB &#x534F;&#x8BAE;&#x7684; Bit0/2/1 &#x5BF9;&#x5E94;</li>
+<li>&#x9F20;&#x6807;&#x534F;&#x8BAE;&#x7684;&#x4E2D;&#x8F6E;&#x8F6C;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x4E3A; RFB &#x534F;&#x8BAE;&#x7684;&#x6309;&#x4E0B;/&#x5F39;&#x8D77;&#x4E8B;&#x4EF6;</li>
+</ul>
+<blockquote>
+<p>&#x6839;&#x636E; <a href="https://en.wikipedia.org/wiki/RFB_protocol#Limitations" target="_blank">wiki</a> &#x63CF;&#x8FF0;&#xFF0C;RFB &#x534F;&#x8BAE;&#x53EA;&#x652F;&#x6301;8&#x4E2A;&#x9F20;&#x6807;&#x952E;&#x4F4D;&#xFF0C;&#x5DE6;&#x4E2D;&#x53F3;&#x548C;&#x6ED1;&#x8F6E;&#x5360;&#x7528;5&#x4E2A;&#xFF0C;&#x53EA;&#x6709;3&#x4E2A;&#x952E;&#x4F4D;&#x7ED9;&#x7279;&#x6B8A;&#x6309;&#x952E;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x591A;&#x529F;&#x80FD;&#x6E38;&#x620F;&#x9F20;&#x6807;&#xFF09;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 输入协议">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="keyboard.html" class="navigation navigation-next " aria-label="Next page: 键盘事件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"鼠标事件","level":"1.3.1","depth":2,"next":{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},"previous":{"title":"输入协议","level":"1.3","depth":1,"path":"input/README.md","ref":"input/README.md","articles":[{"title":"鼠标事件","level":"1.3.1","depth":2,"path":"input/mouse.md","ref":"input/mouse.md","articles":[]},{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},{"title":"剪贴板","level":"1.3.3","depth":2,"path":"input/clipboard.md","ref":"input/clipboard.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["summary","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"input/mouse.md","mtime":"2021-08-11T09:25:24.073Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-11T09:26:07.198Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

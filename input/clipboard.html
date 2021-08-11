@@ -1,0 +1,448 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>剪贴板 · RFB 远程帧缓冲协议</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="keyboard.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../initial/">
+            
+                <a href="../initial/">
+            
+                    
+                    协议初始化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../initial/protocol-version.html">
+            
+                <a href="../initial/protocol-version.html">
+            
+                    
+                    协议版本握手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../initial/security-type.html">
+            
+                <a href="../initial/security-type.html">
+            
+                    
+                    安全握手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    输入协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="mouse.html">
+            
+                <a href="mouse.html">
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="keyboard.html">
+            
+                <a href="keyboard.html">
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="clipboard.html">
+            
+                <a href="clipboard.html">
+            
+                    
+                    剪贴板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >剪贴板</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x526A;&#x8D34;&#x677F;">&#x526A;&#x8D34;&#x677F;</h1>
+<p>&#x590D;&#x5236;&#x7C98;&#x8D34;&#x662F;&#x53CC;&#x5411;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x7531;&#x5BA2;&#x6237;&#x7AEF;&#x5411;&#x670D;&#x52A1;&#x7AEF;&#x590D;&#x5236;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7531;&#x670D;&#x52A1;&#x7AEF;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x590D;&#x5236;&#x3002;</p>
+<h2 id="&#x534F;&#x8BAE;&#x62A5;&#x6587;">&#x534F;&#x8BAE;&#x62A5;&#x6587;</h2>
+<p>&#x590D;&#x5236;&#x526A;&#x8D34;&#x677F;&#x7684;&#x62A5;&#x6587;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  +--------------+--------------+--------------+
+  | No. of bytes | Type [Value] | Description  |
+  +--------------+--------------+--------------+
+  | 1            | U8 [3/6]     | message-type |
+  | 3            |              | padding      |
+  | 4            | U32          | length       |
+  | length       | U8 array     | text         |
+  +--------------+--------------+--------------+
+</code></pre><ul>
+<li>message-type: &#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x662F; <code>0x6</code>&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x662F; <code>0x3</code></li>
+<li>length: &#x6587;&#x672C;&#x957F;&#x5EA6;</li>
+<li>text: &#x590D;&#x5236;&#x7C98;&#x8D34;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x957F;&#x5EA6;&#x7531; length &#x9650;&#x5236;</li>
+</ul>
+<p>&#x534F;&#x8BAE;&#x6709;&#x51E0;&#x70B9;&#x9650;&#x5236;</p>
+<ul>
+<li>&#x53EA;&#x652F;&#x6301; ISO 8859-1 (Latin-1) &#x5B57;&#x7B26;&#x96C6;</li>
+<li>&#x4F7F;&#x7528;&#x5355;&#x72EC;&#x6362;&#x884C;&#x7B26; <code>0x0a</code>&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x56DE;&#x8F66;&#x7B26; <code>0x0d</code></li>
+</ul>
+<h2 id="&#x62D3;&#x5C55;&#x526A;&#x8D34;&#x677F;&#x4F2A;&#x534F;&#x8BAE;">&#x62D3;&#x5C55;&#x526A;&#x8D34;&#x677F;&#x4F2A;&#x534F;&#x8BAE;</h2>
+<p>Latin-1 &#x5B57;&#x7B26;&#x96C6;&#x6781;&#x5927;&#x9650;&#x5236;&#x4E86;&#x7C98;&#x8D34;&#x677F;&#x529F;&#x80FD;&#xFF0C;&#x793E;&#x533A;&#x4E00;&#x76F4;&#x5728;&#x5BFB;&#x627E;&#x5728;&#x517C;&#x5BB9;&#x65E7;&#x534F;&#x8BAE;&#x57FA;&#x7840;&#x4E0A;&#x62D3;&#x5C55;&#x526A;&#x8D34;&#x677F;&#x5B57;&#x7B26;&#x96C6;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>2016&#x5E74;&#xFF0C;Cendio Ossman &#x5C06; <a href="https://github.com/rfbproto/rfbproto/commit/08018f655acd52970680b34021159924357efb5d" target="_blank">Extended Clipboard Pseudo-Encoding</a> &#x5408;&#x5165;&#x534F;&#x8BAE;&#x4E3B;&#x5206;&#x652F;&#xFF0C;&#x76EE;&#x524D; UltraVNC/TigerVNC/RealVNC &#x670D;&#x52A1;&#x7AEF;&#x90FD;&#x652F;&#x6301;&#x6B64;&#x62D3;&#x5C55;&#x534F;&#x8BAE;&#xFF0C;x11vnc &#x5C1A;&#x672A;&#x63D0;&#x4F9B;&#x652F;&#x6301;&#xFF08;2021/8/11&#xFF09;&#x3002;</p>
+<p>&#x62D3;&#x5C55;&#x526A;&#x8D34;&#x677F;&#x4F2A;&#x534F;&#x8BAE;&#x9700;&#x8981;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x8F6F;&#x4EF6;&#x540C;&#x65F6;&#x652F;&#x6301;&#x3002;&#x62A5;&#x6587;&#x62D3;&#x5C55;&#x4E86; <code>ServerCutText</code> &#x548C; <code>ClientCutText</code>&#xFF0C; &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  +--------------+--------------+--------------+
+  | No. of bytes | Type [Value] | Description  |
+  +--------------+--------------+--------------+
+  | 1            | U8 [3/6]     | message-type |
+  | 3            |              | padding      |
+  | 4            | S32          | length       |
+  | 4            | U32          | text-type    |
+  | length-4     | U8 array     | text         |
+  +--------------+--------------+--------------+
+</code></pre><ul>
+<li>length: &#x6570;&#x636E;&#x7C7B;&#x578B;&#x7531; U32 &#x6539;&#x4E3A; S32&#x3002;&#x9996;bit&#x662F;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;0 &#x8868;&#x793A;&#x4F20;&#x9012;&#x539F;&#x59CB; Latin-1 &#x6D88;&#x606F;&#xFF0C;1 &#x8868;&#x793A;&#x4F20;&#x9012; unicode&#x3002;abs(length) &#x8868;&#x793A;&#x6D88;&#x606F;&#x957F;&#x5EA6;&#x3002;</li>
+<li>text-type: &#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x652F;&#x6301;&#x6587;&#x672C;&#x3001;&#x5BCC;&#x6587;&#x672C;&#x3001;html &#x7B49;&#x6D88;&#x606F;&#x7C7B;&#x578B;</li>
+<li>text: &#x6D88;&#x606F;&#x5934;&#x90E8;&#x589E;&#x52A0;4&#x5B57;&#x8282;&#xFF0C;&#x8868;&#x793A;&#x590D;&#x5236;&#x7684;&#x6D88;&#x606F;&#x7C7B;&#x578B;</li>
+</ul>
+<p>text-type &#x503C;&#x7684;&#x542B;&#x4E49;&#x5982;&#x4E0B;</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>text</td>
+<td>UTF-8 &#x7F16;&#x7801;&#xFF0C;&#x4EE5; <code>\r\n</code> &#x4E3A;&#x6362;&#x884C;</td>
+</tr>
+<tr>
+<td>1</td>
+<td>rtf</td>
+<td>&#x5FAE;&#x8F6F;&#x5BCC;&#x6587;&#x672C;&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>html</td>
+<td>&#x5FAE;&#x8F6F; HTML &#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dib</td>
+<td>Microsoft Device Independent Bitmap</td>
+</tr>
+<tr>
+<td>4</td>
+<td>files</td>
+<td>&#x6587;&#x4EF6;&#xFF0C;&#x672A;&#x5B9E;&#x73B0;</td>
+</tr>
+<tr>
+<td>5-15</td>
+<td>Reserved for future formats</td>
+</tr>
+<tr>
+<td>16-23</td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td>24</td>
+<td>caps</td>
+<td>&#x6307;&#x793A; text-type &#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td>25</td>
+<td>request</td>
+<td>&#x5F3A;&#x5236;&#x5BF9;&#x7AEF;&#x4F20;&#x9012;&#x526A;&#x8D34;&#x677F;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>26</td>
+<td>peek</td>
+<td>&#x5F3A;&#x5236;&#x5BF9;&#x7AEF;&#x66F4;&#x65B0;&#x652F;&#x6301;&#x7684; text-type</td>
+</tr>
+<tr>
+<td>27</td>
+<td>notify</td>
+<td>peek &#x56DE;&#x5305;&#xFF0C;&#x8FD4;&#x56DE;&#x652F;&#x6301;&#x7684; text-type</td>
+</tr>
+<tr>
+<td>28</td>
+<td>provide</td>
+<td>request &#x56DE;&#x5305;&#xFF0C;&#x8FD4;&#x56DE;&#x7C98;&#x8D34;&#x677F;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>29-31</td>
+<td>Reserved for future actions</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="keyboard.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 键盘事件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"剪贴板","level":"1.3.3","depth":2,"previous":{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"input/clipboard.md","mtime":"2021-08-11T09:25:24.073Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-11T09:26:07.198Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
