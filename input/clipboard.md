@@ -26,10 +26,13 @@
 - 只支持 ISO 8859-1 (Latin-1) 字符集
 - 使用单独换行符 `0x0a`，不应该使用回车符 `0x0d`
 
-## 拓展多字节
+## 拓展剪贴板伪协议
 
-RFB 3.8 限制 CutText 消息只能传输 Latin-1 字符，社区通过 `Extended Clipboard Pseudo-Encoding` 伪编码拓展协议。
-此协议需要客户端和服务端软件同时支持。报文如下：
+Latin-1 字符集极大限制了粘贴板功能，社区一直在寻找在兼容旧协议基础上拓展剪贴板字符集的方法。
+
+2016年，Cendio Ossman 将 [Extended Clipboard Pseudo-Encoding](https://github.com/rfbproto/rfbproto/commit/08018f655acd52970680b34021159924357efb5d) 合入协议主分支，目前 UltraVNC/TigerVNC/RealVNC 服务端都支持此拓展协议，x11vnc 尚未提供支持（2021/8/11）。
+
+拓展剪贴板伪协议需要客户端和服务端软件同时支持。报文拓展了 `ServerCutText` 和 `ClientCutText`， 如下：
 
 ```
   +--------------+--------------+--------------+
