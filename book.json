@@ -1,11 +1,21 @@
 {
     "title" : "RFB 远程帧缓冲协议",
     "plugins": [
-        "summary",
-        "highlight",
-        "-lunr",
-        "-search",
-        "search-pro",
-        "toggle-chapters"
-    ]
+        "-sharing",
+        "-lunr", "-search", "search-pro",
+        "expandable-chapters",
+        "mermaid-v8",
+        "back-to-top-button",
+        "github",
+        "prism", "-highlight",
+        "icp"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/vincenthcui/rfc6143"
+        },
+        "icp": {
+            "number": "粤ICP备20027265号-1"
+        }
+    }
 }
