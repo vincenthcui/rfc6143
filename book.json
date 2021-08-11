@@ -8,7 +8,7 @@
         "back-to-top-button",
         "github",
         "prism", "-highlight",
-        "icp"
+        "icp", "hide-element"
     ],
     "pluginsConfig": {
         "github": {
@@ -16,6 +16,11 @@
         },
         "icp": {
             "number": "粤ICP备20027265号-1"
+        },
+        "hide-element": {
+            "elements": [
+                ".gitbook-link"
+            ]
         }
     }
 }
