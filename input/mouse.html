@@ -11,21 +11,30 @@
         
         
         
+
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-v8/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
                 
             
                 
@@ -49,6 +58,8 @@
     
         
     
+
+
 
         
     
@@ -219,8 +230,22 @@
             Published with GitBook
         </a>
     </li>
-</ul>
 
+    
+    <li>
+        
+        
+        
+            
+        
+        
+            <a href="http://www.beian.miit.gov.cn/" target="blank" class="gitbook-link">
+                粤ICP备20027265号-1
+            </a>
+        
+    </li>
+    
+</ul>
 
                 </nav>
             
@@ -258,7 +283,7 @@
 <p>&#x9F20;&#x6807;&#x6307;&#x9488;&#x5373;&#x9F20;&#x6807;&#x64CD;&#x4F5C;&#x4E8B;&#x4EF6;&#xFF0C;&#x5206;&#x79FB;&#x52A8;&#x4E8B;&#x4EF6;&#x548C;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x4E24;&#x79CD;&#x3002;&#x5728; RFB &#x534F;&#x8BAE;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528; PointerEvent &#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x3002;</p>
 <h2 id="&#x534F;&#x8BAE;&#x62A5;&#x6587;">&#x534F;&#x8BAE;&#x62A5;&#x6587;</h2>
 <p>&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x7684;&#x62A5;&#x6587;&#x5982;&#x4E0B;</p>
-<pre><code>  +--------------+--------------+--------------+
+<pre class="language-"><code>  +--------------+--------------+--------------+
   | No. of bytes | Type [Value] | Description  |
   +--------------+--------------+--------------+
   | 1            | U8 [5]       | message-type |
@@ -275,7 +300,7 @@
 <p>button-mask &#x7684; Bit0/1/2 &#x4F4D;&#x7F6E;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x9F20;&#x6807;&#x7684;&#x5DE6;&#x952E;&#x3001;&#x4E2D;&#x5EFA;&#x3001;&#x53F3;&#x952E;&#x3002;&#x4F7F;&#x7528;&#x6EDA;&#x8F6E;&#x7684;&#x9F20;&#x6807;&#xFF0C;&#x6BCF;&#x5411;&#x4E0A;&#x6ED1;&#x52A8;&#x4E00;&#x6B21;&#xFF0C;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A; Bit3 &#x7684;&#x6309;&#x4E0B;&#x548C;&#x5F39;&#x8D77;&#x4E8B;&#x4EF6;&#xFF1B;&#x6BCF;&#x5411;&#x4E0B;&#x6ED1;&#x52A8;&#x4E00;&#x6B21;&#xFF0C;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A; Bit4 &#x7684;&#x6309;&#x4E0B;&#x548C;&#x5F39;&#x8D77;&#x4E8B;&#x4EF6;&#x3002;</p>
 <h2 id="usbps2-&#x9F20;&#x6807;&#x534F;&#x8BAE;">USB/PS/2 &#x9F20;&#x6807;&#x534F;&#x8BAE;</h2>
 <p>&#x5728; PS/2 &#x6216; USB &#x9F20;&#x6807;&#x534F;&#x8BAE;&#x4E2D;&#xFF0C;&#x6709;&#x7C7B;&#x4F3C; RFB &#x534F;&#x8BAE;&#x7684;&#x8868;&#x8FBE;&#x65B9;&#x5F0F;&#x3002;</p>
-<pre><code> &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+<pre class="language-"><code> &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
  &#x2502;      &#x2502; Bit7 &#x2502; Bit6 &#x2502; Bit5 &#x2502; Bit4 &#x2502; Bit3 &#x2502; Bit2 &#x2502; Bit1 &#x2502; Bit0 &#x2502;
  &#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x253C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2524;
  &#x2502;Byte 1&#x2502;Y Over&#x2502;X Over&#x2502;X Sign&#x2502;Y Sign&#x2502; 0x1  &#x2502; Mid  &#x2502;Right &#x2502; Left &#x2502;
@@ -337,12 +362,13 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"鼠标事件","level":"1.3.1","depth":2,"next":{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},"previous":{"title":"输入协议","level":"1.3","depth":1,"path":"input/README.md","ref":"input/README.md","articles":[{"title":"鼠标事件","level":"1.3.1","depth":2,"path":"input/mouse.md","ref":"input/mouse.md","articles":[]},{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},{"title":"剪贴板","level":"1.3.3","depth":2,"path":"input/clipboard.md","ref":"input/clipboard.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["summary","highlight","-lunr","-search","search-pro","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"highlight":{},"search-pro":{},"toggle-chapters":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"input/mouse.md","mtime":"2021-08-11T09:27:11.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-11T09:27:55.200Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"鼠标事件","level":"1.3.1","depth":2,"next":{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},"previous":{"title":"输入协议","level":"1.3","depth":1,"path":"input/README.md","ref":"input/README.md","articles":[{"title":"鼠标事件","level":"1.3.1","depth":2,"path":"input/mouse.md","ref":"input/mouse.md","articles":[]},{"title":"键盘事件","level":"1.3.2","depth":2,"path":"input/keyboard.md","ref":"input/keyboard.md","articles":[]},{"title":"剪贴板","level":"1.3.3","depth":2,"path":"input/clipboard.md","ref":"input/clipboard.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","expandable-chapters","mermaid-v8","back-to-top-button","github","prism","-highlight","icp"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/vincenthcui/rfc6143"},"mermaid-v8":{},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"粤ICP备20027265号-1"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"input/mouse.md","mtime":"2021-08-11T10:00:39.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-11T10:01:45.183Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -355,17 +381,27 @@
         
     
         
-        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-mermaid-v8/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
+
+<script src="../gitbook/gitbook-plugin-mermaid-v8/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>
