@@ -2,6 +2,10 @@
     "title" : "RFB 远程帧缓冲协议",
     "plugins": [
         "summary",
+        "highlight",
+        "-lunr",
+        "-search",
+        "search-pro",
         "toggle-chapters"
     ]
 }
