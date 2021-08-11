@@ -19,7 +19,7 @@
         },
         "hide-element": {
             "elements": [
-                ".gitbook-link"
+                "a[href=\"https://www.gitbook.com\"]"
             ]
         }
     }
