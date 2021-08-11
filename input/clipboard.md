@@ -66,4 +66,4 @@ text-type 值的含义如下
 | 26	| peek | 强制对端更新支持的 text-type |
 | 27	| notify | peek 回包，返回支持的 text-type |
 | 28	| provide | request 回包，返回粘贴板内容 |
-| 29-31	| Reserved for future actions |
+| 29-31	| Reserved for future actions | |
