@@ -40,3 +40,22 @@
 ```
 
 > bits-per-pixel 必须大于或等于 depth
+
+## SetPixelFormat
+
+客户端发送 SetPixelFormat，声明支持的像素格式（画面质量）。此消息覆盖 ServerInit 消息中服务端声明的初始化像素格式。
+
+当 true-color-flag 为 0 时，要求服务端发送 SetColorMapEntries，声明使用的颜色表。客户端发送 SetPixelFormat 后，需清空本地缓存的颜色表，无论颜色表中是否有内容。
+
+```
++--------------+--------------+--------------+
+| No. of bytes | Type [Value] | Description  |
++--------------+--------------+--------------+
+| 1            | U8 [0]       | message-type |
+| 3            |              | padding      |
+| 16           | PIXEL_FORMAT | pixel-format |
++--------------+--------------+--------------+
+```
+
+- message-type: 消息类型，固定为 0
+- pixel-format: [PixelFormat](#pixelformat) 结构
