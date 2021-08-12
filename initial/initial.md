@@ -46,4 +46,4 @@ sequenceDiagram
 - server-pixel-format: 服务器默认像素格式
 - name-length/name-string: 桌面的名字
 
-> 如果客户端无法响应服务端制定的 pixel-format，可以主动发起 [SetPixelFormat](/display/pixel-format.md#SetPixelFormat) 进行重置
+> 如果客户端无法响应服务端制定的 pixel-format，可以主动发起 [SetPixelFormat](/display/pixel-format.md#SetPixelFormat) 重新设置。
