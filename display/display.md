@@ -1,6 +1,6 @@
 # 显示协议
 
-客户端可能处于弱网络环境，或只有较低性能的渲染设备。如果服务端不加限制的向客户端发送像素画面，很容易造成客户端卡死或网络堵塞。在 RFB 协议中，当且仅当客户端主动请求显示数据时，服务端才会将 [FramebufferUpdate](#FramebufferUpdate) 发往客户端。响应 [FramebufferUpdateRequest](FramebufferUpdateRequest) 往往需要返回多条 FramebufferUpdate。
+客户端可能处于弱网络环境，或只有较低性能的渲染设备。如果服务端不加限制的向客户端发送像素画面，很容易造成客户端卡死或网络堵塞。在 RFB 协议中，当且仅当客户端主动请求显示数据时，服务端才会将 [FramebufferUpdate](#FramebufferUpdate) 发往客户端。响应 [FramebufferUpdateRequest](#FramebufferUpdateRequest) 往往需要返回多条 FramebufferUpdate。
 
 
 ```mermaid
