@@ -67,3 +67,5 @@ text-type 值的含义如下
 | 27	| notify | peek 回包，返回支持的 text-type |
 | 28	| provide | request 回包，返回粘贴板内容 |
 | 29-31	| Reserved for future actions | |
+
+> 增强协议的换行符是 `\r\n`，原始协议的换行符是 `\n`
