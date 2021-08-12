@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>输入协议 · RFB 远程帧缓冲协议</title>
+        <title>编码 · RFB 远程帧缓冲协议</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -72,10 +72,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="mouse.html" />
     
-    
-    <link rel="prev" href="../initial/initial.html" />
+    <link rel="prev" href="../display/display.html" />
     
 
     </head>
@@ -175,9 +173,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../input/">
             
-                <a href="./">
+                <a href="../input/">
             
                     
                     输入协议
@@ -189,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="mouse.html">
+        <li class="chapter " data-level="1.3.1" data-path="../input/mouse.html">
             
-                <a href="mouse.html">
+                <a href="../input/mouse.html">
             
                     
                     鼠标事件
@@ -202,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="keyboard.html">
+        <li class="chapter " data-level="1.3.2" data-path="../input/keyboard.html">
             
-                <a href="keyboard.html">
+                <a href="../input/keyboard.html">
             
                     
                     键盘事件
@@ -215,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="clipboard.html">
+        <li class="chapter " data-level="1.3.3" data-path="../input/clipboard.html">
             
-                <a href="clipboard.html">
+                <a href="../input/clipboard.html">
             
                     
                     剪贴板
@@ -278,9 +276,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../encoding/">
+        <li class="chapter active" data-level="1.5" data-path="./">
             
-                <a href="../encoding/">
+                <a href="./">
             
                     
                     编码
@@ -335,7 +333,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >输入协议</a>
+        <a href=".." >编码</a>
     </h1>
 </div>
 
@@ -350,8 +348,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8F93;&#x5165;&#x534F;&#x8BAE;">&#x8F93;&#x5165;&#x534F;&#x8BAE;</h1>
-<p>RFB &#x534F;&#x8BAE;&#x652F;&#x6301;&#x9F20;&#x6807;&#x548C;&#x952E;&#x76D8;&#x4E24;&#x79CD;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#xFF0C;&#x540C;&#x65F6;&#x652F;&#x6301;&#x526A;&#x8D34;&#x677F;&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x590D;&#x5236;&#x7C98;&#x8D34;&#x3002;</p>
+                                <h1 id="&#x7F16;&#x7801;">&#x7F16;&#x7801;</h1>
+<p>&#x201D;&#x7F16;&#x7801;&#x201C; &#x662F;&#x50CF;&#x7D20;&#x6570;&#x636E;&#x7684;&#x8868;&#x8FBE;&#x65B9;&#x5F0F;&#x3002;&#x5728;&#x53D1;&#x5F80;&#x5BA2;&#x6237;&#x7AEF;&#x524D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7ECF;&#x5E38;&#x5C06;&#x53D1;&#x9001;&#x7684;&#x56FE;&#x5F62;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3001;&#x538B;&#x7F29;&#xFF0C;&#x63D0;&#x9AD8;&#x56FE;&#x50CF;&#x4F20;&#x8F93;&#x6548;&#x7387;&#x3002;</p>
+<pre class="language-"><code>+--------+-----------------------------+
+| Number | Name                        |
++--------+-----------------------------+
+| 0      | Raw                         |
+| 1      | CopyRect                    |
+| 2      | RRE                         |
+| 5      | Hextile                     |
+| 15     | TRLE                        |
+| 16     | ZRLE                        |
+| -239   | Cursor pseudo-encoding      |
+| -223   | DesktopSize pseudo-encoding |
++--------+-----------------------------+
+</code></pre><ul>
+<li>Raw: &#x539F;&#x59CB;&#x4F4D;&#x56FE;&#x7F16;&#x7801;&#xFF0C;&#x5373;&#x4E0D;&#x7F16;&#x7801;</li>
+<li>CopyRect: &#x4ECE;&#x5E27;&#x7F13;&#x51B2;&#x590D;&#x5236;</li>
+<li>RRE: rise-and-run-length &#x4E8C;&#x7EF4;&#x6E38;&#x7A0B;&#x7F16;&#x7801;</li>
+<li>Hextile: RRE &#x7684;&#x53D8;&#x79CD;&#xFF0C;&#x5377;&#x79EF;&#x6E38;&#x7A0B;&#x7F16;&#x7801;</li>
+<li>TRLE: &#x9576;&#x5D4C;&#x6E38;&#x7A0B;&#x7F16;&#x7801;</li>
+<li>ZRLE: Zlib Run-Length Encoding&#xFF0C;zlib &#x538B;&#x7F29;&#x7684;&#x6E38;&#x7A0B;&#x7F16;&#x7801;</li>
+<li>Cursor pseudo-encoding: &#x9F20;&#x6807;&#x6307;&#x9488;&#x4F2A;&#x7F16;&#x7801;</li>
+<li>DesktopSize pseudo-encoding: &#x684C;&#x9762;&#x5206;&#x8FA8;&#x7387;&#x4F4D;&#x7F16;&#x7801;</li>
+</ul>
 
                                 
                                 </section>
@@ -379,14 +399,10 @@
 
             
                 
-                <a href="../initial/initial.html" class="navigation navigation-prev " aria-label="Previous page: 初始化">
+                <a href="../display/display.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 显示协议">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="mouse.html" class="navigation navigation-next " aria-label="Next page: 鼠标事件">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -395,7 +411,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"输入协议","level":"1.3","depth":1,"next":{"title":"鼠标事件","level":"1.3.1","depth":2,"path":"input/mouse.md","ref":"input/mouse.md","articles":[]},"previous":{"title":"初始化","level":"1.2.3","depth":2,"path":"initial/initial.md","ref":"initial/initial.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","expandable-chapters","mermaid-v8","back-to-top-button","github","prism","-highlight","icp","hide-element"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/vincenthcui/rfc6143"},"mermaid-v8":{},"search-pro":{},"hide-element":{"elements":["a[href=\"https://www.gitbook.com\"]"]},"fontsettings":{"theme":"white","family":"sans","size":2},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"粤ICP备20027265号-1"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"input/README.md","mtime":"2021-08-12T09:40:44.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-12T09:41:50.578Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"编码","level":"1.5","depth":1,"previous":{"title":"显示协议","level":"1.4.2","depth":2,"path":"display/display.md","ref":"display/display.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","expandable-chapters","mermaid-v8","back-to-top-button","github","prism","-highlight","icp","hide-element"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/vincenthcui/rfc6143"},"mermaid-v8":{},"search-pro":{},"hide-element":{"elements":["a[href=\"https://www.gitbook.com\"]"]},"fontsettings":{"theme":"white","family":"sans","size":2},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"粤ICP备20027265号-1"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"encoding/README.md","mtime":"2021-08-12T09:40:44.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-12T09:41:50.578Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
