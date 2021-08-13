@@ -14,3 +14,4 @@
    - [显示协议](display/display.md)
 - [编码](encoding/README.md)
    - [Raw 原始编码](encoding/raw.md)
+   - [CopyRect 镜像编码](encoding/copy-rect.md)
