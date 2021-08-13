@@ -11,11 +11,13 @@ notifications:
     on_failure: always
 
 install:
+  - sudo apt-get install jq
   - npm install -g gitbook-cli
   - npm install
   - gitbook install
 
 script:
+  - cat <<< $(jq --arg secret "$GITTALK_SECRET" '.pluginsConfig.gittalk.clientSecret = $secret' book.json) > book.json
   - gitbook build
 
 branches:
