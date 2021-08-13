@@ -7,7 +7,7 @@ notifications:
   pushover:
     api_key: "$PUSHOVER_KEY"
     users:
-      - ux5hor4rdhhh3o9pswmnbypqtvrwkg
+      - "$PUSHOVER_USER"
     on_success: change
     on_failure: always
 
