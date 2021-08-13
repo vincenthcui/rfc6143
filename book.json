@@ -1,35 +1,37 @@
 {
-    "title" : "RFB 远程帧缓冲协议",
-    "plugins": [
-        "-sharing",
-        "-lunr", "-search", "search-pro",
-        "expandable-chapters",
-        "mermaid-v8",
-        "back-to-top-button",
-        "github",
-        "prism", "-highlight",
-        "icp", "hide-element",
-        "gittalk"
-    ],
-    "pluginsConfig": {
-        "github": {
-            "url": "https://github.com/vincenthcui/rfc6143"
-        },
-        "icp": {
-            "number": "粤ICP备20027265号-1"
-        },
-        "hide-element": {
-            "elements": [
-                "a[href=\"https://www.gitbook.com\"]"
-            ]
-        },
-        "gittalk": {
-            "clientID": "0d25ffc9a6f2a3194eec",
-            "clientSecret": "",
-            "repo": "rfc6143",
-            "owner": "vincenthcui",
-            "admin": ["vincenthcui"],
-            "distractionFreeMode": false
-          }
+  "title": "RFB 远程帧缓冲协议",
+  "plugins": [
+    "-sharing",
+    "-lunr",
+    "-search",
+    "search-pro",
+    "expandable-chapters",
+    "mermaid-v8",
+    "back-to-top-button",
+    "github",
+    "prism",
+    "-highlight",
+    "icp",
+    "hide-element",
+    "gittalk"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/vincenthcui/rfc6143"
+    },
+    "icp": {
+      "number": "粤ICP备20027265号-1"
+    },
+    "hide-element": {
+      "elements": ["a[href=\"https://www.gitbook.com\"]"]
+    },
+    "gittalk": {
+      "clientID": "0d25ffc9a6f2a3194eec",
+      "clientSecret": "",
+      "repo": "rfc6143",
+      "owner": "vincenthcui",
+      "admin": ["vincenthcui"],
+      "distractionFreeMode": false
     }
+  }
 }
