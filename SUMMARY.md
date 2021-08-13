@@ -15,3 +15,4 @@
 - [编码](encoding/README.md)
    - [Raw 原始编码](encoding/raw.md)
    - [CopyRect 镜像编码](encoding/copy-rect.md)
+   - [RRE 上升游程编码](encoding/rise-and-run-length.md)
