@@ -4,11 +4,10 @@ node_js:
 cache: npm
 
 notifications:
-  email:
-    recipients:
-      - vincenthcui@qq.com
-    on_success: change
-    on_failure: always
+  pushover:
+    api_key: "$PUSHOVER_KEY"
+    users:
+      - ux5hor4rdhhh3o9pswmnbypqtvrwkg
 
 install:
   - sudo apt-get install jq
