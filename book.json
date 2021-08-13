@@ -20,7 +20,8 @@
       "url": "https://github.com/vincenthcui/rfc6143"
     },
     "icp": {
-      "number": "粤ICP备20027265号-1"
+      "number": "粤ICP备20027265号-1",
+      "link": "http://beian.miit.gov.cn/"
     },
     "hide-element": {
       "elements": ["a[href=\"https://www.gitbook.com\"]"]
