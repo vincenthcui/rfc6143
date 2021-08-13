@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>TRLE 卷积游程编码 · RFB 远程帧缓冲协议</title>
+        <title>TRLE 图块游程编码 · RFB 远程帧缓冲协议</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -355,7 +355,7 @@
                 <a href="tiled-run-length.html">
             
                     
-                    TRLE 卷积游程编码
+                    TRLE 图块游程编码
             
                 </a>
             
@@ -425,7 +425,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >TRLE 卷积游程编码</a>
+        <a href=".." >TRLE 图块游程编码</a>
     </h1>
 </div>
 
@@ -440,9 +440,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5377;&#x79EF;&#x6E38;&#x7A0B;&#x7F16;&#x7801;-trle">&#x5377;&#x79EF;&#x6E38;&#x7A0B;&#x7F16;&#x7801; TRLE</h1>
-<p>TRLE&#xFF08;Tiled Run-Length Encoding&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x5377;&#x79EF;&#x6280;&#x672F;&#x3001;&#x8C03;&#x8272;&#x677F;&#x6280;&#x672F;&#x4EE5;&#x53CA;&#x6E38;&#x7A0B;&#x7F16;&#x7801;&#xFF0C;&#x5BF9;&#x4F20;&#x8F93;&#x7684;&#x684C;&#x9762;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;</p>
-<p>&#x5728;&#x5377;&#x79EF;&#x6280;&#x672F;&#xFF08;Tiled&#xFF09;&#x4E2D;&#xFF0C;&#x77E9;&#x5F62;&#x88AB;&#x5206;&#x4E3A; N &#x4E2A; 16x16 &#x7684;&#x5C0F;&#x77E9;&#x5F62;&#xFF08;&#x53EB;&#x505A;&#x201D;&#x74E6;&#x7247;&#x201C;&#xFF09;&#xFF0C;&#x74E6;&#x7247;&#x6309;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#xFF0C;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x7684;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x6210;&#x4E00;&#x4F4D;&#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C;&#x77E9;&#x5F62;&#x7684;&#x5C3A;&#x5BF8;&#x4E0D;&#x662F; 16 &#x7684;&#x6574;&#x6570;&#x500D;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x5217;&#x74E6;&#x7247;&#x7684;&#x5BBD;&#x5EA6;&#x5E94;&#x4E3A;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;&#xFF08;&#x5C0F;&#x4E8E;16&#xFF09;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x6392;&#x74E6;&#x7247;&#x7684;&#x9AD8;&#x5EA6;&#x5E94;&#x4E3A;&#x5B9E;&#x9645;&#x9AD8;&#x5EA6;&#xFF08;&#x5C0F;&#x4E8E;16&#xFF09;&#x3002;</p>
+                                <h1 id="&#x56FE;&#x5757;&#x6E38;&#x7A0B;&#x7F16;&#x7801;-trle">&#x56FE;&#x5757;&#x6E38;&#x7A0B;&#x7F16;&#x7801; TRLE</h1>
+<p>TRLE&#xFF08;Tiled Run-Length Encoding&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x56FE;&#x5757;&#x538B;&#x7F29;&#x6280;&#x672F;&#x3001;&#x8C03;&#x8272;&#x677F;&#x6280;&#x672F;&#x4EE5;&#x53CA;&#x6E38;&#x7A0B;&#x7F16;&#x7801;&#xFF0C;&#x5BF9;&#x4F20;&#x8F93;&#x7684;&#x684C;&#x9762;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;</p>
+<p>&#x5728;&#x56FE;&#x5757;&#x538B;&#x7F29;&#x6280;&#x672F;&#xFF08;Tiled&#xFF09;&#x4E2D;&#xFF0C;&#x77E9;&#x5F62;&#x88AB;&#x5206;&#x4E3A; N &#x4E2A; 16x16 &#x7684;&#x5C0F;&#x77E9;&#x5F62;&#xFF08;&#x53EB;&#x505A;&#x201D;&#x56FE;&#x5757;&#x201C;&#xFF09;&#xFF0C;&#x74E6;&#x7247;&#x6309;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#xFF0C;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x7684;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x6210;&#x4E00;&#x4F4D;&#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C;&#x77E9;&#x5F62;&#x7684;&#x5C3A;&#x5BF8;&#x4E0D;&#x662F; 16 &#x7684;&#x6574;&#x6570;&#x500D;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x5217;&#x74E6;&#x7247;&#x7684;&#x5BBD;&#x5EA6;&#x5E94;&#x4E3A;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;&#xFF08;&#x5C0F;&#x4E8E;16&#xFF09;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x6392;&#x74E6;&#x7247;&#x7684;&#x9AD8;&#x5EA6;&#x5E94;&#x4E3A;&#x5B9E;&#x9645;&#x9AD8;&#x5EA6;&#xFF08;&#x5C0F;&#x4E8E;16&#xFF09;&#x3002;</p>
 <p>TRLE &#x4E2D;&#x4F7F;&#x7528;&#x65B0;&#x7684;&#x7C7B;&#x578B; CPIXEL &#xFF08;compressed pixel&#xFF09;&#x8868;&#x8FBE;&#x50CF;&#x7D20;&#x70B9;&#xFF0C;&#x517C;&#x5BB9;&#x5DF2;&#x7EA6;&#x5B9A;&#x7684; PIXEL_FORMAT&#x3002;&#x5728; CPIXEL &#x4E2D;&#xFF0C;true-color-flag &#x662F;&#x975E;&#x96F6;&#x503C;&#xFF0C;bits-per-pixel &#x662F; 32&#xFF0C;depth &#x662F; 24&#xFF0C;&#x6216;&#x66F4;&#x5C11;&#xFF08;&#x4FE1;&#x606F;&#x538B;&#x7F29;&#x6BD4;&#x66F4;&#x9AD8;&#xFF09;&#x3002;&#x7EC4;&#x6210;&#x7EA2;&#x9EC4;&#x84DD;&#x7684;&#x8272;&#x5F69;&#x53EA;&#x4F7F;&#x7528;&#x6700;&#x4F4E;&#x4E09;&#x4F4D;&#x6216;&#x6700;&#x9AD8;&#x4E09;&#x4F4D;&#x6709;&#x6548;&#x5B57;&#x8282;&#x3002;</p>
 <h2 id="&#x5B50;&#x7F16;&#x7801;">&#x5B50;&#x7F16;&#x7801;</h2>
 <p>&#x6BCF;&#x4E2A;&#x74E6;&#x7247;&#xFF08;Tile&#xFF09;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x8868;&#x793A;&#x5B50;&#x7F16;&#x7801;&#x7C7B;&#x578B;&#x3002;&#x5B50;&#x7F16;&#x7801;&#x7C7B;&#x578B;&#x7684;&#x6700;&#x9AD8;&#x6BD4;&#x7279;&#x8868;&#x793A; Tile &#x662F;&#x5426;&#x4F7F;&#x7528;&#x6E38;&#x7A0B;&#x7F16;&#x7801;&#x3002;&#x4F4E; 7-bit &#x6307;&#x793A;&#x8C03;&#x8272;&#x677F;&#x7684;&#x5927;&#x5C0F;&#x3002;0 &#x4EE3;&#x8868;&#x4E0D;&#x4F7F;&#x7528;&#x8C03;&#x8272;&#x677F;&#xFF0C;1 &#x4EE3;&#x8868;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x989C;&#x8272;&#xFF0C;2-127 &#x4EE3;&#x8868;&#x8C03;&#x8272;&#x677F;&#x7684;&#x5927;&#x5C0F;&#x3002;127/129 &#x662F;&#x4E24;&#x4E2A;&#x7279;&#x6B8A;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x8DDF;&#x4E0A;&#x4E00;&#x4E2A; Tile &#x5171;&#x4EAB;&#x8C03;&#x8272;&#x677F;&#x3002;</p>
@@ -552,10 +552,34 @@
 <tr>
 <td style="text-align:center">511</td>
 <td style="text-align:center">0xFFFF00</td>
-<td><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script></td>
 </tr>
 </tbody>
 </table>
+<h3 id="b-1000-0001">B 1000 0001</h3>
+<p>&#x4F7F;&#x7528;&#x6E38;&#x7A0B;&#x7F16;&#x7801;&#xFF0C;&#x590D;&#x7528;&#x524D;&#x4E00;&#x4E2A; Tile &#x7684;&#x8C03;&#x8272;&#x677F;</p>
+<h3 id="&#x3010;b-1000-0002-b-1111-1111&#x3011;">&#x3010;B 1000 0002, B 1111 1111&#x3011;</h3>
+<p>&#x8C03;&#x8272;&#x677F;&#x6E38;&#x7A0B;&#x7F16;&#x7801;&#x3002;</p>
+<h4 id="&#x8C03;&#x8272;&#x677F;">&#x8C03;&#x8272;&#x677F;</h4>
+<p>&#x8C03;&#x8272;&#x677F;&#x5BB9;&#x91CF; = sub-encoding - 0x80</p>
+<pre class="language-"><code>+----------------------------+--------------+-------------+
+| No. of bytes               | Type [Value] | Description |
++----------------------------+--------------+-------------+
+| paletteSize*bytesPerCPixel | CPIXEL array | palette     |
++----------------------------+--------------+-------------+
+</code></pre><h4 id="&#x6E38;&#x7A0B;">&#x6E38;&#x7A0B;</h4>
+<p>&#x5728;&#x6E38;&#x7A0B;&#x9636;&#x6BB5;&#xFF0C;&#x4F7F;&#x7528;&#x8C03;&#x8272;&#x677F;&#x7F16;&#x53F7;&#x4EE3;&#x8868;&#x989C;&#x8272;</p>
+<pre class="language-"><code>+--------------+--------------+--------------+
+| No. of bytes | Type [Value] | Description  |
++--------------+--------------+--------------+
+| 1            | U8           | paletteIndex |
++--------------+--------------+--------------+
+</code></pre><p><code>+-------------------------+--------------+-----------------------+
+| No. of bytes            | Type [Value] | Description           |
++-------------------------+--------------+-----------------------+
+| 1                       | U8           | paletteIndex + 128    |
+| div(runLength - 1, 255) | U8 array     | 255                   |
+| 1                       | U8           | (runLength-1) mod 255 |
++-------------------------+--------------+-----------------------+</code><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script></p>
 
                                 
                                 </section>
@@ -599,7 +623,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TRLE 卷积游程编码","level":"1.5.4","depth":2,"next":{"title":"ZRLE Zlib游程编码","level":"1.5.5","depth":2,"path":"encoding/zlib-run-length.md","ref":"encoding/zlib-run-length.md","articles":[]},"previous":{"title":"RRE 上升游程编码","level":"1.5.3","depth":2,"path":"encoding/rise-and-run-length.md","ref":"encoding/rise-and-run-length.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","expandable-chapters","mermaid-v8","back-to-top-button","github","prism","-highlight","icp","hide-element","gittalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/vincenthcui/rfc6143"},"mermaid-v8":{},"search-pro":{},"hide-element":{"elements":["a[href=\"https://www.gitbook.com\"]"]},"fontsettings":{"theme":"white","family":"sans","size":2},"icp":{"link":"http://beian.miit.gov.cn/","style":{},"number":"粤ICP备20027265号-1"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"gittalk":{"clientID":"0d25ffc9a6f2a3194eec","clientSecret":"4c3218a5cbb19e48a51c1ad19bf946a89d6c2d52","repo":"rfc6143","owner":"vincenthcui","admin":["vincenthcui"],"distractionFreeMode":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"encoding/tiled-run-length.md","mtime":"2021-08-13T19:54:00.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-13T19:55:10.883Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TRLE 图块游程编码","level":"1.5.4","depth":2,"next":{"title":"ZRLE Zlib游程编码","level":"1.5.5","depth":2,"path":"encoding/zlib-run-length.md","ref":"encoding/zlib-run-length.md","articles":[]},"previous":{"title":"RRE 上升游程编码","level":"1.5.3","depth":2,"path":"encoding/rise-and-run-length.md","ref":"encoding/rise-and-run-length.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","expandable-chapters","mermaid-v8","back-to-top-button","github","prism","-highlight","icp","hide-element","gittalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/vincenthcui/rfc6143"},"mermaid-v8":{},"search-pro":{},"hide-element":{"elements":["a[href=\"https://www.gitbook.com\"]"]},"fontsettings":{"theme":"white","family":"sans","size":2},"icp":{"link":"http://beian.miit.gov.cn/","style":{},"number":"粤ICP备20027265号-1"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"gittalk":{"clientID":"0d25ffc9a6f2a3194eec","clientSecret":"4c3218a5cbb19e48a51c1ad19bf946a89d6c2d52","repo":"rfc6143","owner":"vincenthcui","admin":["vincenthcui"],"distractionFreeMode":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RFB 远程帧缓冲协议","gitbook":"*"},"file":{"path":"encoding/tiled-run-length.md","mtime":"2021-08-13T20:38:55.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-13T20:40:23.482Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
