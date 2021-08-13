@@ -20,8 +20,8 @@
 - Raw: 原始位图编码，即不编码
 - CopyRect: 从帧缓冲复制
 - RRE: rise-and-run-length 二维游程编码
-- Hextile: RRE 的变种，卷积游程编码
-- TRLE: 镶嵌游程编码
+- Hextile: RRE 的变种，图块游程编码
+- TRLE: 图块游程编码
 - ZRLE: Zlib Run-Length Encoding，zlib 压缩的游程编码
 - Cursor pseudo-encoding: 鼠标指针伪编码
 - DesktopSize pseudo-encoding: 桌面分辨率位编码
