@@ -8,7 +8,8 @@
         "back-to-top-button",
         "github",
         "prism", "-highlight",
-        "icp", "hide-element"
+        "icp", "hide-element",
+        "gittalk"
     ],
     "pluginsConfig": {
         "github": {
@@ -21,6 +22,14 @@
             "elements": [
                 "a[href=\"https://www.gitbook.com\"]"
             ]
-        }
+        },
+        "gittalk": {
+            "clientID": "0d25ffc9a6f2a3194eec",
+            "clientSecret": "",
+            "repo": "rfc6143",
+            "owner": "vincenthcui",
+            "admin": ["vincenthcui"],
+            "distractionFreeMode": false
+          }
     }
 }

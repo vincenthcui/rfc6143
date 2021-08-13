@@ -11,6 +11,7 @@ notifications:
     on_failure: always
 
 install:
+  - apt-get install jq
   - npm install -g gitbook-cli
   - npm install
   - gitbook install
