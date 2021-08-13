@@ -16,3 +16,4 @@
    - [Raw 原始编码](encoding/raw.md)
    - [CopyRect 镜像编码](encoding/copy-rect.md)
    - [RRE 上升游程编码](encoding/rise-and-run-length.md)
+   - [ZRLE Zlib游程编码](encoding/zlib-run-length.md)
