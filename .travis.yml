@@ -8,6 +8,8 @@ notifications:
     api_key: "$PUSHOVER_KEY"
     users:
       - ux5hor4rdhhh3o9pswmnbypqtvrwkg
+    on_success: change
+    on_failure: always
 
 install:
   - sudo apt-get install jq
