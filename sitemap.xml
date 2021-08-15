@@ -14,6 +14,7 @@
 <url> <loc>https://rfb.vincentcui.cn/transfer/input/keyboard.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/input/clipboard.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://rfb.vincentcui.cn/transfer/encoding/set-encoding.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/raw.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/copy-rect.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/rise-and-run-length.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
