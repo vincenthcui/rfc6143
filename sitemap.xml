@@ -6,13 +6,13 @@
 <url> <loc>https://rfb.vincentcui.cn/handshake/protocol-version.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/handshake/security-type.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/handshake/initial.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://rfb.vincentcui.cn/transfer/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://rfb.vincentcui.cn/transfer/display.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://rfb.vincentcui.cn/transfer/pixel-format.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/input/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/input/mouse.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/input/keyboard.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/input/clipboard.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://rfb.vincentcui.cn/transfer/display/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://rfb.vincentcui.cn/transfer/display/pixel-format.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://rfb.vincentcui.cn/transfer/display/display.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/raw.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://rfb.vincentcui.cn/transfer/encoding/copy-rect.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
