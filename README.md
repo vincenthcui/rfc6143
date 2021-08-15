@@ -2,13 +2,9 @@
 
 ## RFB
 
-RFB(Remote Framebuffer Protocol) 远程帧缓冲协议，是一种允许用户通过网络连接控制远端计算机的七层网络协议。在 RFB 协议中，用户通过本地鼠标、键盘输入，经由远端计算机计算后，将图形用户界面（GUI）回传本地进行输出。
+RFB (Remote Framebuffer Protocol) 远程帧缓冲协议，是一种允许用户通过网络连接控制远端计算机的七层网络协议。在 RFB 协议中，用户通过本地鼠标、键盘输入，经由远端计算机计算后，将图形用户界面（GUI）回传本地进行输出。
 
 ![RFB 协议通信](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-07-085929.png)
-
-### Framebuffer
-
-> TODO
 
 ### VNC 软件
 
