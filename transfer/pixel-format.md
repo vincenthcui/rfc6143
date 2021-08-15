@@ -1,10 +1,12 @@
 # 像素格式
 
-帧缓冲由二维像素点组成，帧缓冲的长和宽的成绩代表像素点总数，也叫**分辨率**。
+[帧缓冲](/GLOSSORY.md#帧缓冲)由像素构成。
+
+![像素组成帧缓冲](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-15-084847.jpg)
 
 ## PixelFormat
 
-在 RFB 协议中，使用 16 字节结构体 PIXEL_FORMAT 描述像素格式。
+RFB 协议中，使用 16 字节结构体 PIXEL_FORMAT 描述像素的格式。
 
 ```
  +--------------+--------------+-----------------+
@@ -24,10 +26,10 @@
  +--------------+--------------+-----------------+
 ```
 
-- bits-per-pixel: 描述单个像素的位数，位数越大，色彩越丰富。只支持[8|16|32]
+- bits-per-pixel: 像素的位数，位数越大，色彩越丰富。只支持[8|16|32]
 - depth: 色深，像素中表示色彩的位数
-- big-endian-flag: 多字节像素的字节序，非零即打断
-- true-color-flag: 1 表示真彩色，pixel 表示颜色；0 表示调色板，pexel 表示颜色颜色表中的位置
+- big-endian-flag: 多字节像素的字节序，非零即大端序
+- true-color-flag: 1 表示真彩色，pixel 的值表示 RGB 颜色；0 表示调色板，pexel 的值表示颜色在调色板的偏移量
 - -max/-shift: 获取红蓝绿三色的位移量和长度，max=2^N-1,N是颜色的位数
 
 ```
@@ -43,9 +45,9 @@
 
 ## SetPixelFormat
 
-客户端发送 SetPixelFormat，声明支持的像素格式（画面质量）。此消息覆盖 ServerInit 消息中服务端声明的初始化像素格式。
+客户端发送 SetPixelFormat，声明需要的的像素格式（画面质量）。此消息覆盖 [ServerInit](/handshake/initial.md#服务端初始化) 消息中服务端声明的初始化像素格式。
 
-当 true-color-flag 为 0 时，要求服务端发送 SetColorMapEntries，声明使用的颜色表。客户端发送 SetPixelFormat 后，需清空本地缓存的颜色表，无论颜色表中是否有内容。
+当 true-color-flag 为 0 时，服务端必须发送 SetColorMapEntries，声明使用的颜色表。客户端发送 SetPixelFormat 后，需清空本地缓存的颜色表，无论颜色表中是否有内容。
 
 ```
 +--------------+--------------+--------------+
