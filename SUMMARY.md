@@ -14,6 +14,7 @@
     - [键盘事件](transfer/input/keyboard.md)
     - [剪贴板](transfer/input/clipboard.md)
   - [编码](transfer/encoding/README.md)
+    - [设置编码](transfer/encoding/set-encoding.md)
     - [Raw 原始编码](transfer/encoding/raw.md)
     - [CopyRect 镜像编码](transfer/encoding/copy-rect.md)
     - [RRE 上升游程编码](transfer/encoding/rise-and-run-length.md)
