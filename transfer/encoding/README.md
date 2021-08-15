@@ -24,4 +24,4 @@
 - [TRLE](/transfer/encoding/tiled-run-length.md): 图块游程编码
 - [ZRLE](/transfer/encoding/zlib-run-length.md): Zlib Run-Length Encoding，zlib 压缩的游程编码
 - Cursor pseudo-encoding: 鼠标指针伪编码
-- DesktopSize pseudo-encoding: 桌面分辨率位编码
+- DesktopSize pseudo-encoding: 桌面分辨率伪编码
