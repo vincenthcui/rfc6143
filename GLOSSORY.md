@@ -2,7 +2,7 @@
 
 帧缓冲器也称为帧缓冲或者显存，是显卡上的存储器，帧缓冲的每一个存储单位对应一个像素,它是屏幕所显示画面的一个直接映象，又称为位映射图(Bit Map)或光栅。
 
-![帧缓冲器](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-15-021220.jpg)
+![帧缓冲器](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-15-022750.jpg)
 
 # 调色板
 
@@ -18,4 +18,4 @@
 
 游程编码的优点是将重复性高的数据压缩成小单位；若数据出现频率不高，压缩结果可能比原始数据大。例如："ABCDE"，压缩结果为"1A1B1C1D1E"，由5个字符转成10个字符，压缩比 200%。
 
-![游程编码](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-15-021417.jpg)
+![游程编码](http://babeler-1251731700.cos.ap-shanghai.myqcloud.com/2021-08-15-022914.jpg)
