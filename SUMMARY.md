@@ -1,6 +1,6 @@
 # 目录
 
-- [简介](README.md)
+- [远程帧缓冲协议](README.md)
   - [术语表](GLOSSORY.md)
 - [协议初始化](initial/README.md)
    - [协议版本握手](initial/protocol-version.md)

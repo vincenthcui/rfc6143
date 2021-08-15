@@ -13,7 +13,8 @@
     "-highlight",
     "icp",
     "hide-element",
-    "gittalk"
+    "gittalk",
+    "sitemap"
   ],
   "pluginsConfig": {
     "github": {
@@ -33,6 +34,9 @@
       "owner": "vincenthcui",
       "admin": ["vincenthcui"],
       "distractionFreeMode": false
+    },
+    "sitemap": {
+      "hostname": "https://rfb.vincentcui.cn/"
     }
   }
 }
