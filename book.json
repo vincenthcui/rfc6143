@@ -14,7 +14,7 @@
     "icp",
     "hide-element",
     "gittalk",
-    "sitemap"
+    "sitemap", "ga"
   ],
   "pluginsConfig": {
     "github": {
@@ -37,6 +37,9 @@
     },
     "sitemap": {
       "hostname": "https://rfb.vincentcui.cn/"
+    },
+    "ga": {
+      "token": "UA-204324591-1"
     }
   }
 }
