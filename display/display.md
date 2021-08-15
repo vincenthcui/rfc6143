@@ -43,7 +43,7 @@ incremental 通常为非 0 值，服务器只需要发送变更的图形位置�
 
 ## FramebufferUpdate
 
-FramebufferUpdate 由一组色块(rectangles of pixel)组成，用户受到 FramebufferUpdate 后，将消息内的色块填充到帧缓冲对应区域，完成图像展示。
+FramebufferUpdate 由一组矩形(rectangles of pixel)组成，用户受到 FramebufferUpdate 后，将消息内的矩形填充到帧缓冲对应区域，完成图像展示。
 
 ```
 +--------------+--------------+----------------------+
@@ -56,11 +56,11 @@ FramebufferUpdate 由一组色块(rectangles of pixel)组成，用户受到 Fram
 ```
 
 - message-type: 消息类型，固定 0
-- number-of-rectangles: 色块的数量
+- number-of-rectangles: 矩形的数量
 
 ### FramebufferUpdateRectangle
 
-FramebufferUpdate 携带 `number-of-rectangles` 数量的色块信息，每个色块都有头部信息
+FramebufferUpdate 携带 `number-of-rectangles` 数量的矩形信息，每个矩形都有头部信息
 
 ```
 +--------------+--------------+---------------+
@@ -74,6 +74,6 @@ FramebufferUpdate 携带 `number-of-rectangles` 数量的色块信息，每个�
 +--------------+--------------+---------------+
 ```
 
-- x-position/y-position: 色块起始坐标
-- width/height: 色块宽度和高度
+- x-position/y-position: 矩形起始坐标
+- width/height: 矩形宽度和高度
 - encoding-type: 编码类型
