@@ -1,6 +1,6 @@
 # 远程帧缓冲协议
 
-## RFB
+## RFB 协议
 
 RFB (Remote Framebuffer Protocol) 远程帧缓冲协议，是一种允许用户通过网络连接控制远端计算机的七层网络协议。
 在 RFB 协议中，用户通过本地鼠标、键盘输入，经由远端计算机计算后，将图形用户界面（GUI）回传本地进行输出。
@@ -12,7 +12,7 @@ RFB (Remote Framebuffer Protocol) 远程帧缓冲协议，是一种允许用户�
 协议设计有以下几个特点：
 
 - 瘦客户端。客户端职责简单清晰，无状态
-- 考虑弱网络环境
+- 运行在弱网络环境下
 - 跨操作系统兼容性
 
 ## 协议版本
@@ -46,3 +46,10 @@ Version 3.8 (Final) | 2010-11-26 | -
 > RFB 是 IETF 公开的开源通信协议
 > 
 > RFB® 和 VNC® 是 RealVNC 公司的注册商标。
+
+## 公开协议版本及资料
+
+- [RFC 6143: The Remote Framebuffer Protocol (describes Version 3.8)](https://tools.ietf.org/html/rfc6143)
+- [The RFB Protocol - Community Version](https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst)
+- [The RFB Protocol - Version 3.8 (2010-11-26)](https://web.archive.org/web/20160410055332/http://www.realvnc.com/docs/rfbproto.pdf)
+- [The RFB Protocol - Version 3.7 (2003-08-12)](https://web.archive.org/web/20040325204925/http://www.realvnc.com/docs/rfbproto.pdf)
