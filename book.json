@@ -14,7 +14,9 @@
     "icp",
     "hide-element",
     "gittalk",
-    "sitemap", "ga"
+    "sitemap",
+    "ga",
+    "page-copyright"
   ],
   "pluginsConfig": {
     "github": {
@@ -40,6 +42,15 @@
     },
     "ga": {
       "token": "UA-204324591-1"
+    },
+    "page-copyright": {
+      "description": "远程帧缓冲协议 Remote Framebuffer Protocol",
+      "signature": "巴别塔人",
+      "wisdom": "Come, let us build us a city and a tower whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.",
+      "format": "YYYY",
+      "copyright": "Copyright &#169; Vince.H.Cui",
+      "noPowered": true,
+      "baseUri": "https://rfb.vincentcui.cn"
     }
   }
 }
