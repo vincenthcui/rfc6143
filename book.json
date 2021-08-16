@@ -16,7 +16,8 @@
     "gittalk",
     "sitemap",
     "ga",
-    "tbfed-pagefooter"
+    "tbfed-pagefooter",
+    "pageview-count"
   ],
   "pluginsConfig": {
     "github": {
