@@ -17,7 +17,7 @@
     "sitemap",
     "ga",
     "tbfed-pagefooter",
-    "pageview-count"
+    "pageview-busuanzi"
   ],
   "pluginsConfig": {
     "github": {
